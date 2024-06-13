@@ -340,7 +340,7 @@ services:
     command: run cron
   worker:
     <<: *sentry_defaults
-    command: run worker
+    command: run worker --concurrency 8
   events-consumer:
     <<: *sentry_defaults
     command: run consumer ingest-events --consumer-group ingest-consumer
